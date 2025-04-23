@@ -351,7 +351,7 @@ void ejercicio23() {
 		lotes.push_back(lote);
 	}
 	imprimirLotes(lotes);
-	cout << "Media de todos los elementos: " << mediaTotal(lotes) << endl;
+	cout << "Media de todos los elementos: " << mediaTotal(lotes);
 }
 void imprimirLotes(vector<vector<double>> lotes) {
 	for (int i = 0; i < lotes.size(); i++) {

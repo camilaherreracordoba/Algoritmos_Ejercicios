@@ -1,0 +1,4 @@
+﻿  ciclos.cpp
+C:\Users\Pc\source\repos\Algoritmos_Ejercicios\Ejercicios\ciclos.cpp(374,29): warning C4267: '+=': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Pc\source\repos\Algoritmos_Ejercicios\Ejercicios\ciclos.cpp(129,1): warning C4715: 'posicion': no todas las rutas de acceso de control devuelven un valor
+  Ejercicios.vcxproj -> C:\Users\Pc\source\repos\Algoritmos_Ejercicios\x64\Debug\Ejercicios.exe

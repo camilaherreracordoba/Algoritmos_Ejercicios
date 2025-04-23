@@ -101,17 +101,6 @@ void ciclos() {
     cout << "-------- Ingrese una de las opciones --------" << endl;
     cout << "---------------------------------------------" << endl;
     cout << "0. Menu Principal" << endl;
-    cout << "13. Veinte numeros consecutivos" << endl;
-    cout << "14. Factorial" << endl;
-    cout << "15. Suma parcial de reales" << endl;
-    cout << "16. Maximo y minimo de reales" << endl;
-    cout << "17." << endl;
-    cout << "18. " << endl;
-    cout << "19. " << endl;
-    cout << "20. " << endl;
-    cout << "21. " << endl;
-    cout << "22. " << endl;
-    cout << "23. " << endl;
     cin >> seleccion;
     switch (seleccion) {
     case (13):
@@ -164,7 +153,7 @@ void ciclos() {
         ciclos();
     }
 }
-void funciones() {
+static void funciones() {
     int seleccion;
     cout << "---------------------------------------------" << endl;
     cout << "---------------- 4.Funciones ----------------" << endl;
