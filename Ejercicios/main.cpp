@@ -131,13 +131,29 @@ void ciclos() {
         ejercicio19();
         ciclos();
         break;
+    case (20):
+        ejercicio20();
+        ciclos();
+        break;
+    case (21):
+        ejercicio21();
+        ciclos();
+        break;
+    case (22):
+        ejercicio22();
+        ciclos();
+        break;
+    case (23):
+        ejercicio23();
+        ciclos();
+        break;
     case (0):
         break;
     default:
         ciclos();
     }
 }
-void funciones() {
+static void funciones() {
     int seleccion;
     cout << "---------------------------------------------" << endl;
     cout << "---------------- 4.Funciones ----------------" << endl;

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector> 
-
+#include <tuple>
 #include "Header.h"
 using namespace std;
 
@@ -212,8 +212,169 @@ void ejercicio19() {
 
 /* 20) Dada una serie de nombres con sus salarios respectivos, determinar el salario máximo, el mínimo y la persona que percibe cada uno. */
 
+tuple<string, double> obtenerMayorSalario(vector<tuple<string, double>> salarios) {
+	tuple<string, double> mayor = salarios[0];
+	for (int i = 1; i < salarios.size(); i++) {
+		if (get<1>(salarios[i]) > get<1>(mayor)) {
+			mayor = salarios[i];
+		}
+	}
+	return mayor;
+}
+tuple<string, double> obtenerMenorSalario(vector<tuple<string, double>> salarios) {
+	tuple<string, double> menor = salarios[0];
+	for (int i = 1; i < salarios.size(); i++) {
+		if (get<1>(salarios[i]) < get<1>(menor)) {
+			menor = salarios[i];
+		}
+	}
+	return menor;
+}
+
+void ejercicio20() {
+	tuple<string, double> salario, menor, mayor;
+	vector<tuple<string, double>> salarios;
+	string nombre;
+	double monto;
+	char seguir = ' ';
+	while(seguir!= 'n' and seguir!='N') {
+		cout << "Ingrese el nombre de la persona: " << endl;
+		cin >> nombre;
+		cout << "Ingrese el monto que percibe de su salario: " << endl;
+		cin >> monto;
+		get<0>(salario) = nombre;
+		get<1>(salario) = monto;
+		salarios.push_back(salario);
+		cout << "Ingresar otro salario? (cualquier caracter para continuar, n para salir)" << endl;
+		cin >> seguir;
+	}
+	mayor = obtenerMayorSalario(salarios);
+	menor = obtenerMenorSalario(salarios);
+	cout << "Mayor salario: " << get<1>(mayor) << "(" << get<0>(mayor) << ")" << endl;
+	cout << "Menor salario: " << get<1>(menor) << "(" << get<0>(menor) << ")" << endl;
+}
 /* 21) Escribir un algoritmo que lea una serie de números reales y verifique si están ordenados en forma ascendente, descendente o si no están ordenados, informando por pantalla.*/
+void ejercicio21() {
+	vector<double> numeros;
+	double numero;
+	char entrada = ' ';
+	while (entrada != 'n' && entrada != 'N') {
+		cout << "Ingrese un numero: " << endl;
+		cin >> numero;
+		numeros.push_back(numero);
 
+		cout << "Ingrese s para seguir o n para terminar: " << endl;
+		cin >> entrada;
+	}
+	imprimirVector(numeros);
+	if (estaEnOrdenAscendente(numeros)) {
+		cout << "La serie de numeros esta ordenada en orden ascendente" << endl;
+	}
+	else if (estaEnOrdenDescendente(numeros)) {
+		cout << "La serie de numeros esta ordenada en orden descendente" << endl;
+	}
+	else {
+		cout << "La serie de numeros no esta ordenada " << endl;
+	}
+}
+
+
+bool estaEnOrdenAscendente(vector<double> numeros) {
+	double numero = numeros[0];
+	for (int i = 1; i < numeros.size(); i++) {
+		if (numero > numeros[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+bool estaEnOrdenDescendente(vector<double> numeros) {
+	double numero = numeros[0];
+	for (int i = 1; i < numeros.size(); i++) {
+		if (numero < numeros[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+void imprimirVector(vector<double> vector) {
+	if (vector.size() > 0) {
+		cout << "[";
+		for (int i = 0; i < (vector.size() - 1); i++) {
+			cout << vector[i];
+			cout << ", ";
+		}
+		cout << vector[vector.size() - 1] << "]" << endl;
+	}
+	else {
+		cout << "[]" << endl;
+	}
+}
 /* 22) La relación entre temperaturas Celsius y Fahrenheit está dada por : C = 5 / 9 * (F – 32).Escribir un algoritmo que haga una tabla de valores Celsius - Fahrenheit, para valores entre OºF y 200ºF, a intervalos de 10º.*/
+void ejercicio22() {
+	double gradosFahrenheit = 0;
+	double gradosCelsius = 0;
+	cout << "Fahrenheit a Celsius" << endl;
 
-/* 23) Leer N y luego N lotes de números reales que terminan con un valor 0, y calcularla media individual de cada lote, junto con la media total de todos los númerosingresados. */
+	while (gradosFahrenheit <= 200)
+	{
+		gradosCelsius = fahrenheitACelsius(gradosFahrenheit);
+		cout << "   " << gradosFahrenheit << "    |    " << gradosCelsius << endl;
+		gradosFahrenheit += 10;
+	}
+}
+
+double fahrenheitACelsius(double grados) {
+	return (grados - 32) * 5 / 9;
+}
+
+
+/* 23) Leer N y luego N lotes de números reales que terminan con un valor 0, y calcularla media individual de cada lote, junto con la media total de todos los números ingresados. */
+
+void ejercicio23() {
+	int N;
+	double entrada;
+	vector<vector<double>> lotes;
+	cout << "Ingrese la cantidad de lotes: ";
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		vector<double> lote;
+		cout << "Ingrese los numeros para el lote " << i + 1 << " (finalice con 0):" << endl;
+		while (true) {
+			cin >> entrada;
+			if (entrada == 0) {
+				break;
+			}
+			lote.push_back(entrada);
+		}
+		lotes.push_back(lote);
+	}
+	imprimirLotes(lotes);
+	cout << "Media de todos los elementos: " << mediaTotal(lotes);
+}
+void imprimirLotes(vector<vector<double>> lotes) {
+	for (int i = 0; i < lotes.size(); i++) {
+		imprimirVector(lotes[i]);
+		cout << "Media: " << media(lotes[i]) << endl;
+	}
+}
+double media(vector<double> lote) {
+	double suma = 0;
+	for (int i = 0; i < lote.size(); i++) {
+		suma += lote[i];
+	}
+	return suma / lote.size();
+}
+double mediaTotal(vector<vector<double>> lotes) {
+	double suma = 0;
+	int elementos = 0;
+	for (int i = 0; i < lotes.size(
+	); i++) {
+		elementos += lotes[i].size();
+		for (int j = 0; j < lotes[i].size(); j++) {
+			suma += lotes[i][j];
+		}
+	}
+	return suma / elementos;
+}

@@ -48,4 +48,23 @@ void ejercicio18();
 int mutiplicacionPorSumaSucesiva(int numeroA, int numeroB);
 
 void ejercicio19();
+
+
+void ejercicio20();
+tuple<string, double> obtenerMenorSalario(vector<tuple<string, double>>);
+
+
+void ejercicio21();
+bool estaOrdenado(vector<double> numeros);
+bool estaEnOrdenAscendente(vector<double> numeros);
+bool estaEnOrdenDescendente(vector<double> numeros);
+void imprimirVector(vector<double> vector);
+
+void ejercicio22();
+double fahrenheitACelsius(double grados);
+
+void ejercicio23();
+void imprimirLotes(vector<vector<double>> lotes);
+double media(vector<double> lote);
+double mediaTotal(vector<vector<double>> lotes);
 #endif
