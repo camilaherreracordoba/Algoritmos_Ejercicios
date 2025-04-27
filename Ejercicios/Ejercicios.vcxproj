@@ -131,9 +131,14 @@
     <ClCompile Include="estructurasSecuenciales.cpp" />
     <ClCompile Include="estructurasSelectivas.cpp" />
     <ClCompile Include="ciclos.cpp" />
+    <ClCompile Include="funciones.cpp" />
+    <ClCompile Include="registrosYTablas.cpp" />
+    <ClCompile Include="vectoresYMatrices.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Persona.h" />
+    <ClInclude Include="Producto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

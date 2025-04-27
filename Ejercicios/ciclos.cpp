@@ -311,6 +311,19 @@ void imprimirVector(vector<double> vector) {
 		cout << "[]" << endl;
 	}
 }
+void imprimirVector(vector<int> vector) {
+	if (vector.size() > 0) {
+		cout << "[";
+		for (int i = 0; i < (vector.size() - 1); i++) {
+			cout << vector[i];
+			cout << ", ";
+		}
+		cout << vector[vector.size() - 1] << "]" << endl;
+	}
+	else {
+		cout << "[]" << endl;
+	}
+}
 /* 22) La relación entre temperaturas Celsius y Fahrenheit está dada por : C = 5 / 9 * (F – 32).Escribir un algoritmo que haga una tabla de valores Celsius - Fahrenheit, para valores entre OºF y 200ºF, a intervalos de 10º.*/
 void ejercicio22() {
 	double gradosFahrenheit = 0;

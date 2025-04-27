@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Header.h"
+#include "Persona.h"
+#include "Producto.h"
 using namespace std;
 
 void estructurasSecuenciales() {
@@ -101,6 +103,7 @@ void ciclos() {
     cout << "-------- Ingrese una de las opciones --------" << endl;
     cout << "---------------------------------------------" << endl;
     cout << "0. Menu Principal" << endl;
+    cout << "Ejercicios de 13 a 23" << endl;
     cin >> seleccion;
     switch (seleccion) {
     case (13):
@@ -160,15 +163,123 @@ static void funciones() {
     cout << "-------- Ingrese una de las opciones --------" << endl;
     cout << "---------------------------------------------" << endl;
     cout << "0. Menu Principal" << endl;
+    cout << "Ejercicios de 24 a 28" << endl;
     cin >> seleccion;
     switch (seleccion) {
     case (0):
+        break;
+    case(24):
+        ejercicio24();
+        funciones();
+        break;
+    case(25):
+        ejercicio25();
+        funciones();
+        break;
+    case(26):
+        ejercicio26();
+        funciones();
+        break;
+    case(27):
+        ejercicio27();
+        funciones();
+        break;
+    case(28):
+        ejercicio28();
+        funciones();
         break;
     default:
         funciones();
     }
 }
-
+void vectoresYMatrices() {
+    int seleccion = 0;
+    cout << "---------------------------------------------" << endl;
+    cout << "---------- 5. Vectores y matrices -----------" << endl;
+    cout << "-------- Ingrese una de las opciones --------" << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "0. Menu Principal" << endl;
+    cout << " Ejercicios de 29 a 39" << endl;
+    cin >> seleccion;
+    switch (seleccion) {
+    case (0):
+        break;
+    case (29):
+        ejercicio29();
+        vectoresYMatrices();
+        break;
+    case (30):
+        ejercicio30();
+        vectoresYMatrices();
+        break;
+    case (31):
+        ejercicio31();
+        vectoresYMatrices();
+        break;
+    case (32):
+        ejercicio32();
+        vectoresYMatrices();
+        break;
+    case (33):
+        ejercicio33();
+        vectoresYMatrices();
+        break;
+    case (34):
+        ejercicio34();
+        vectoresYMatrices();
+        break;
+    case (35):
+        ejercicio35();
+        vectoresYMatrices();
+        break;
+    case (36):
+        ejercicio36();
+        vectoresYMatrices();
+        break;
+    case (37):
+        ejercicio37();
+        vectoresYMatrices();
+        break;
+    case (38):
+        ejercicio38();
+        vectoresYMatrices();
+        break;
+    case (39):
+        ejercicio39();
+        vectoresYMatrices();
+        break;
+    default:
+        vectoresYMatrices();
+    }
+}
+void registrosYTablas() {
+    int seleccion = 0;
+    cout << "---------------------------------------------" << endl;
+    cout << "---------- 6. Registros y tablas ------------" << endl;
+    cout << "-------- Ingrese una de las opciones --------" << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "0. Menu Principal" << endl;
+    cout << "Ejercicios de 40 a 42" << endl;
+    cin >> seleccion;
+    switch (seleccion) {
+    case (0):
+        break;
+    case (40):
+        ejercicio40();
+        registrosYTablas();
+        break;
+    case (41):
+        ejercicio41();
+        registrosYTablas();
+        break;
+    case (42):
+        ejercicio42();
+        registrosYTablas();
+        break;
+    default:
+        registrosYTablas();
+    }
+}
 void menu() {
     int selection = 0;
     cout << "---------------------------------------------" << endl;
@@ -182,6 +293,10 @@ void menu() {
         "3. Ciclos" << endl;
     cout << 
         "4. Funciones" << endl;
+    cout << 
+        "5. Vectores y matrices" << endl;
+    cout <<
+        "6. Registros y tablas" << endl;
     cout << 
         "0. Salida" << endl;
     cout << "---------------------------------------------" << endl;
@@ -202,6 +317,14 @@ void menu() {
         break;
     case 4:
         funciones();
+        menu();
+        break;
+    case 5:
+        vectoresYMatrices();
+        menu();
+        break;
+    case 6:
+        registrosYTablas();
         menu();
         break;
     case 0: 

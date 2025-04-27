@@ -59,6 +59,7 @@ bool estaOrdenado(vector<double> numeros);
 bool estaEnOrdenAscendente(vector<double> numeros);
 bool estaEnOrdenDescendente(vector<double> numeros);
 void imprimirVector(vector<double> vector);
+void imprimirVector(vector<int> vector);
 
 void ejercicio22();
 double fahrenheitACelsius(double grados);
@@ -67,4 +68,71 @@ void ejercicio23();
 void imprimirLotes(vector<vector<double>> lotes);
 double media(vector<double> lote);
 double mediaTotal(vector<vector<double>> lotes);
+
+void ejercicio24();
+double potencia(double numero, int exponente);
+double discriminante(double a, double b, double c);
+bool tieneRaicesReales(double a, double b, double c);
+void imprimirPolinomio(double a, double b, double c);
+
+void ejercicio25();
+tuple<double, double> obtenerRaices(double a, double b, double c);
+
+void ejercicio26();
+
+void ejercicio27();
+bool esPrimo(int numero);
+
+void ejercicio28();
+int maximoComunDivisor(int a, int b);
+int minimoComunMultiplo(int a, int b);
+
+// vectores y matrices 
+
+void ejercicio29();
+vector<int> numerosPrimosEntre(int a, int b);
+
+void ejercicio30();
+vector<double> vectorSuma(vector<double> a, vector<double> b);
+double productoEscalar(vector<double> a, vector<double> b);
+
+double porcentajeNota(vector<tuple<string, int>> alumnos, int nota);
+void ejercicio31();
+
+void ejercicio32();
+vector<int> sinRepetidos(vector<int> vectorX);
+bool estaEnVector(vector<int> vector, int numero);
+
+void ejercicio33();
+vector<int> ordenarVector(vector<int> vector);
+vector<int> vectorUnion(vector<int> vectorA, vector<int> vectorB);
+vector<int> vectorInterseccion(vector<int> vectorA, vector<int> vectorB);
+
+void ejercicio34();
+double especializacion(vector<double> coeficientes, double numero);
+
+void ejercicio35();
+void imprimirMatriz(vector<vector<int>> matriz);
+vector<vector<int>> insertarValoresMatriz(vector<vector<int>> matriz);
+vector<vector<int>> sumarMatrices(vector<vector<int>> matrizA, vector<vector<int>> matrizB);
+bool tienenMismasDimensiones(vector<vector<int>> matrizA, vector<vector<int>> matrizB);
+
+void ejercicio36();
+vector<int> sumaFilasMatriz(vector<vector<int>> matriz);
+
+void ejercicio37();
+bool esCuadrada(vector<vector<int>> matriz);
+int traza(vector<vector<int>> matriz);
+
+void ejercicio38();
+bool esMatrizIdentidad(vector<vector<int>> matriz);
+
+void ejercicio39();
+vector<int> valoresMinimos(vector<vector<int>> matriz);
+
+// registros y tablas
+void ejercicio40();
+
+void ejercicio41();
+void ejercicio42();
 #endif
